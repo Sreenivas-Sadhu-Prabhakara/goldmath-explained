@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: #C1552F; }
+  body { display: grid; place-items: center; }
+  /* 12% safe padding -> content fills the middle 76vmin */
+  .art {
+    width: 76vmin; height: 76vmin;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5vmin;
+  }
+  .punch {
+    width: 52vmin; height: 52vmin; border-radius: 12vmin;
+    background: linear-gradient(145deg, #d55d33, #b04a26);
+    display: grid; place-items: center;
+    box-shadow: inset 0 3vmin 6vmin rgba(255,220,190,0.30),
+                inset 0 -4vmin 8vmin rgba(60,20,8,0.55);
+    border: 1.2vmin solid #8A3B21;
+  }
+  .punch span {
+    font-family: ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 24vmin; font-weight: 800; letter-spacing: -0.03em; color: #FCF7EC;
+    text-shadow: 0 1vmin 1vmin rgba(60,20,8,0.5), 0 -0.5vmin 0 rgba(255,235,215,0.35);
+  }
+  /* the fixed/negotiable split bar beneath the punch — the explainer's tell */
+  .bar {
+    width: 52vmin; height: 8vmin; border-radius: 999px; overflow: hidden; display: flex;
+    border: 0.8vmin solid #8A3B21;
+  }
+  .bar .fix { width: 74%; background: #5f4630; }
+  .bar .neg { width: 26%; background: #FCF7EC;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 1.4vmin, rgba(138,59,33,0.28) 1.4vmin, rgba(138,59,33,0.28) 2.4vmin); }
+</style>
+</head>
+<body>
+  <div class="art">
+    <div class="punch"><span>916</span></div>
+    <div class="bar"><div class="fix"></div><div class="neg"></div></div>
+  </div>
+</body>
+</html>

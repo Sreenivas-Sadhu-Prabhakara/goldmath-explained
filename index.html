@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'none'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; object-src 'none'">
+  <title>How a gold jewellery price is built — making charges, wastage &amp; GST explained</title>
+  <meta name="description" content="An animated explainer of how a gold jewellery bill is built — metal value, wastage, making charges and GST — and which rupees are fixed and which are negotiable. Runs offline, tracks nothing.">
+  <meta name="color-scheme" content="dark light">
+  <link rel="canonical" href="https://sreenivas-sadhu-prabhakara.github.io/goldmath-explained/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Sreenivas Sadhu Prabhakara">
+  <meta name="keywords" content="how gold jewellery price is calculated, gold making charges explained, wastage charges gold, GST on gold jewellery, negotiable making charges, BIS hallmark 916 explained, gold buyback melt value, gold price breakdown">
+  <meta name="theme-color" content="#241711" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F6EEDF" media="(prefers-color-scheme: light)">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="goldmath — explained">
+  <meta property="og:title" content="How a gold jewellery price is built — making charges, wastage &amp; GST explained">
+  <meta property="og:description" content="An animated walk-through of the jeweller's quote: which rupees are FIXED (metal + GST) and which are NEGOTIABLE (making + wastage).">
+  <meta property="og:url" content="https://sreenivas-sadhu-prabhakara.github.io/goldmath-explained/">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:image" content="https://sreenivas-sadhu-prabhakara.github.io/goldmath-explained/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A debossed 916 hallmark punch above a fixed / negotiable gold-price split bar">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How a gold jewellery price is built — making charges, wastage &amp; GST explained">
+  <meta name="twitter:description" content="An animated walk-through of the jeweller's quote: which rupees are fixed and which are negotiable. Private, offline.">
+  <meta name="twitter:image" content="https://sreenivas-sadhu-prabhakara.github.io/goldmath-explained/og-image.png">
+  <meta name="twitter:image:alt" content="A debossed 916 hallmark punch above a fixed / negotiable gold-price split bar">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <!-- Structured data (data block; not affected by script-src) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "goldmath — explained",
+    "description": "An animated, offline explainer of how a gold jewellery price is built from metal value, wastage, making charges and GST, and which parts of the bill are fixed and which are negotiable. Links to the free goldmath calculator.",
+    "url": "https://sreenivas-sadhu-prabhakara.github.io/goldmath-explained/",
+    "applicationCategory": "EducationApplication",
+    "operatingSystem": "Any (modern web browser)",
+    "browserRequirements": "Requires a modern web browser.",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "license": "https://opensource.org/licenses/MIT",
+    "author": { "@type": "Person", "name": "Sreenivas Sadhu Prabhakara" },
+    "softwareVersion": "0.1.0",
+    "featureList": [
+      "Animated breakdown of a gold jewellery bill line by line",
+      "Explains metal value using stamped BIS fineness (916, not 22/24)",
+      "Shows wastage and making charges as the negotiable rupees",
+      "Explains the two GST conventions on gold",
+      "Explains buy-back / melt value and why making charges never return",
+      "Runs 100% offline — the page blocks every network request"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is a gold jewellery price calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A gold jewellery bill is metal value (gross weight times the stamped BIS fineness times the rate) plus wastage, plus making charges, plus GST, plus any stones. Metal value and GST are effectively fixed; wastage and making charges are shop policy and therefore negotiable. This explainer animates each of those layers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which parts of a gold bill are negotiable?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The making charges and wastage (VA) are pure shop policy, so they are the negotiable rupees. The metal value follows the board rate and the hallmarked purity, and GST is statutory — those are fixed. Knowing the exact negotiable figure is the whole point of the goldmath calculator."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is 22-carat gold stamped 916 and not 22 by 24?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Under BIS standard IS 1417, hallmarked 22-carat gold is stamped 916 — a certified minimum of 91.6% purity — rather than 22/24 which is 91.667%. Using the stamped fineness makes the metal-value estimate slightly conservative and honest."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this explainer or the goldmath app track what I am pricing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Both pages set a Content-Security-Policy with connect-src 'none', so the browser itself physically blocks every network request. There are no fonts, scripts, images, or analytics loaded from anywhere else. Nothing about what you are pricing can leave your device."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the explainer</a>
+
+  <!-- progress rail -->
+  <div class="rail" aria-hidden="true"><span class="rail__fill" id="railFill"></span></div>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="top">
+    <div class="hero__inner reveal">
+      <div class="brand">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="7" fill="#C1552F"/>
+          <rect x="3" y="3" width="26" height="26" rx="5" fill="none" stroke="#8A3B21" stroke-width="1.6"/>
+          <text x="16" y="21.5" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="13" letter-spacing="-0.5" fill="#FCF7EC">916</text>
+        </svg>
+        <span class="brand__word">goldmath</span>
+        <span class="brand__tag">explained</span>
+      </div>
+      <p class="eyebrow">BIS purity &middot; wastage &middot; making &middot; GST &middot; the negotiable split</p>
+      <h1 class="hero__title">How a gold jewellery price is built&nbsp;&mdash; making charges, wastage &amp; GST explained</h1>
+      <p class="hero__lede">
+        At the counter you're handed one number. Inside it are rupees that are effectively
+        <span class="hl hl--fix">fixed</span> and rupees that are pure shop policy&mdash;and therefore
+        <span class="hl hl--neg">negotiable</span>. Scroll to watch the bill come apart, layer by layer.
+      </p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="https://sreenivas-sadhu-prabhakara.github.io/goldmath/">Open the goldmath calculator</a>
+        <a class="btn btn--ghost" href="#problem">See how it works</a>
+      </div>
+      <p class="scrollcue" aria-hidden="true"><span>scroll</span><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 4v14m0 0l-6-6m6 6l6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ 1. THE PROBLEM ============ -->
+    <section class="scene" id="problem" aria-labelledby="problemHeading">
+      <div class="scene__inner reveal">
+        <p class="scene__kicker">The problem</p>
+        <h2 class="scene__title" id="problemHeading">The shop shows you a total. It hides the split.</h2>
+        <p class="scene__body">
+          You ask the price of a bangle. The reply is a single figure &mdash; say <strong>&#8377;1,08,000</strong>.
+          Whether that's fair depends entirely on numbers the shop didn't break out. Most online
+          &ldquo;gold calculators&rdquo; make it worse: they fetch a <em>live</em> rate you can't check against the
+          board in front of you, or they quietly fold making charges into the metal price.
+        </p>
+        <div class="lump" aria-hidden="true">
+          <div class="lump__coin">
+            <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="54" class="coin__disc"/><circle cx="60" cy="60" r="44" class="coin__ring"/><text x="60" y="72" text-anchor="middle" class="coin__num">916</text></svg>
+          </div>
+          <div class="lump__total">
+            <span class="lump__label">The one number you get</span>
+            <span class="lump__num" data-count="108000">&#8377;1,08,000</span>
+            <span class="lump__q">&hellip; built from what?</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2. THE STACK / HOW IT SOLVES ============ -->
+    <section class="scene scene--stack" id="stack" aria-labelledby="stackHeading">
+      <div class="scene__inner reveal">
+        <p class="scene__kicker">How it comes apart</p>
+        <h2 class="scene__title" id="stackHeading">Rebuild the total from what you can see on the board.</h2>
+        <p class="scene__body">
+          Enter the gross weight, pick the hallmark purity, type the rate off the board, add the
+          wastage and making the shop quoted, and the bill rebuilds itself line by line. Watch each
+          layer stack up &mdash; and note the stamp on the right of every line.
+        </p>
+
+        <ul class="stack" id="stackList" aria-label="The layers that make up a gold jewellery bill">
+          <li class="layer layer--fix" style="--i:0">
+            <span class="layer__bar"><span class="layer__fill"></span></span>
+            <span class="layer__name">Metal value <em>10&nbsp;g &times; 916 &times; rate</em></span>
+            <span class="layer__val">&#8377;91,600</span>
+            <span class="stamp stamp--fix">&#9670;&nbsp;Fixed</span>
+          </li>
+          <li class="layer layer--neg" style="--i:1">
+            <span class="layer__bar"><span class="layer__fill"></span></span>
+            <span class="layer__name">Wastage (VA) <em>8% of weight, at metal rate</em></span>
+            <span class="layer__val">&#8377;7,328</span>
+            <span class="stamp stamp--neg">&#9671;&nbsp;Negotiable</span>
+          </li>
+          <li class="layer layer--neg" style="--i:2">
+            <span class="layer__bar"><span class="layer__fill"></span></span>
+            <span class="layer__name">Making charges <em>&#8377;550 / gram</em></span>
+            <span class="layer__val">&#8377;5,500</span>
+            <span class="stamp stamp--neg">&#9671;&nbsp;Negotiable</span>
+          </li>
+          <li class="layer layer--fix" style="--i:3">
+            <span class="layer__bar"><span class="layer__fill"></span></span>
+            <span class="layer__name">GST <em>3% composite on the value</em></span>
+            <span class="layer__val">&#8377;3,132</span>
+            <span class="stamp stamp--fix">&#9670;&nbsp;Fixed</span>
+          </li>
+        </ul>
+        <p class="stack__note">
+          A worked example: 10&nbsp;g at 22K&nbsp;<strong>916</strong>, a 24K board rate of
+          &#8377;10,000/g, 8% wastage, &#8377;550/g making, composite 3% GST.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ 3. THE MOTIF: FIXED VS NEGOTIABLE SPLIT ============ -->
+    <section class="scene scene--split" id="split" aria-labelledby="splitHeading">
+      <div class="scene__inner reveal">
+        <p class="scene__kicker">The headline</p>
+        <h2 class="scene__title" id="splitHeading">Now colour it: which rupees can actually move?</h2>
+        <p class="scene__body">
+          Metal value and GST follow the rate and the law &mdash; they're <span class="hl hl--fix">fixed</span>.
+          Wastage and making charges are shop policy &mdash; they're <span class="hl hl--neg">negotiable</span>.
+          goldmath puts that one figure at the top of every quote.
+        </p>
+
+        <div class="splitcard">
+          <div class="splitcard__headline">
+            <span class="splitcard__label">Negotiable</span>
+            <span class="splitcard__big">&#8377;12,828</span>
+            <span class="splitcard__sub">&asymp;&nbsp;12% of this quote</span>
+          </div>
+          <div class="splitbar" role="img" aria-label="About 88% of this quote is fixed metal value and GST; about 12% is negotiable making and wastage">
+            <span class="splitbar__seg splitbar__seg--fix" id="segFix"><span class="splitbar__tick">&#9670; Fixed</span></span>
+            <span class="splitbar__seg splitbar__seg--neg" id="segNeg"><span class="splitbar__tick">&#9671; Negotiable</span></span>
+          </div>
+          <div class="splitcard__legend">
+            <span class="tag tag--fix">&#9670; Fixed &mdash; metal + GST <b>&#8377;94,732</b></span>
+            <span class="tag tag--neg">&#9671; Negotiable &mdash; making + wastage <b>&#8377;12,828</b></span>
+          </div>
+        </div>
+        <p class="split__foot">The dashed edge on the negotiable side is an invitation: that's where the strike-through goes.</p>
+      </div>
+    </section>
+
+    <!-- ============ 4. THE HALLMARK / 916 ============ -->
+    <section class="scene scene--hallmark" id="hallmark" aria-labelledby="hallmarkHeading">
+      <div class="scene__inner reveal">
+        <p class="scene__kicker">The honest number</p>
+        <h2 class="scene__title" id="hallmarkHeading">It uses the stamp, not the fraction.</h2>
+        <div class="hallmark">
+          <div class="punch" aria-hidden="true"><span>916</span></div>
+          <div class="hallmark__body">
+            <p class="scene__body">
+              Under BIS standard IS&nbsp;1417, hallmarked 22-carat gold is stamped <strong>916</strong> &mdash; a
+              certified <em>minimum</em> of 91.6% purity. The tempting shortcut is 22&nbsp;&divide;&nbsp;24&nbsp;=&nbsp;91.667%.
+              goldmath deliberately uses the stamped <strong>916/1000</strong>, so the metal value is a slightly
+              conservative, honest estimate rather than a rosy one. Every purity grade &mdash; 14K585 up to 24K995 &mdash;
+              is cited to its source with the date it was verified.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. THE PRIVACY GUARANTEE ============ -->
+    <section class="scene scene--privacy" id="privacy" aria-labelledby="privacyHeading">
+      <div class="scene__inner reveal">
+        <p class="scene__kicker">Enforced, not promised</p>
+        <h2 class="scene__title" id="privacyHeading">It can't leak what you're pricing &mdash; the browser blocks it.</h2>
+        <div class="privacy">
+          <div class="privacy__diagram" role="img" aria-label="Diagram: the app runs inside your browser; an outbound network request is blocked by the page's own security policy">
+            <div class="node node--app">Your quote<br><small>runs in this browser</small></div>
+            <div class="wall">
+              <span class="wall__arrow"></span>
+              <span class="wall__x">&#10005;</span>
+              <span class="wall__caption">connect&#8209;src&nbsp;'none'</span>
+            </div>
+            <div class="node node--net">The&nbsp;internet<br><small>never reached</small></div>
+          </div>
+          <p class="scene__body">
+            A strict Content-Security-Policy sets <code>connect-src 'none'</code>. That means the page
+            <strong>cannot</strong> make a network request even if it tried &mdash; no live rate is fetched, no
+            analytics fire, nothing about your bangle ever leaves the device. There are no external fonts,
+            scripts, or images either. Saved quotes live only in your browser's local storage.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6. FEATURE TOUR ============ -->
+    <section class="scene scene--tour" id="tour" aria-labelledby="tourHeading">
+      <div class="scene__inner reveal">
+        <p class="scene__kicker">What else it does</p>
+        <h2 class="scene__title" id="tourHeading">A short tour of the calculator.</h2>
+        <ul class="tour">
+          <li class="feat" style="--i:0">
+            <span class="feat__mark" aria-hidden="true">&#8644;</span>
+            <h3 class="feat__title">Verify a bill</h3>
+            <p>Type the total the shop wrote down and goldmath back-solves the implied making charge &mdash; the number to open your haggle with.</p>
+          </li>
+          <li class="feat" style="--i:1">
+            <span class="feat__mark" aria-hidden="true">&#9878;</span>
+            <h3 class="feat__title">Buy-back / melt value</h3>
+            <p>The honest ceiling on what the same ornament fetches on exchange &mdash; net weight &times; fineness &times; rate, with making, wastage and GST stripped out.</p>
+          </li>
+          <li class="feat" style="--i:2">
+            <span class="feat__mark" aria-hidden="true">&#9707;</span>
+            <h3 class="feat__title">Compare two shops</h3>
+            <p>Set Quote&nbsp;A and Quote&nbsp;B for the same ornament and see whose making + wastage is higher, and by exactly how much.</p>
+          </li>
+          <li class="feat" style="--i:3">
+            <span class="feat__mark" aria-hidden="true">&#167;</span>
+            <h3 class="feat__title">Two GST conventions</h3>
+            <p>Composite 3% on the full value, or split 3% on goods + 5% on separately-billed making. The active assumption is always printed, never silent.</p>
+          </li>
+          <li class="feat" style="--i:4">
+            <span class="feat__mark" aria-hidden="true">&#128190;</span>
+            <h3 class="feat__title">Save &amp; print</h3>
+            <p>Name and save quotes in your browser, copy a text summary, or print to PDF &mdash; no accounts, no cloud.</p>
+          </li>
+          <li class="feat" style="--i:5">
+            <span class="feat__mark" aria-hidden="true">&#128269;</span>
+            <h3 class="feat__title">Cited constants</h3>
+            <p>Every purity grade, GST rate and the tola conversion is shown with its source and verified-on date. The maths reads those numbers &mdash; it never duplicates them.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 7. CTA ============ -->
+    <section class="scene scene--cta" id="cta" aria-labelledby="ctaHeading">
+      <div class="scene__inner reveal">
+        <div class="finalcard">
+          <div class="punch punch--sm" aria-hidden="true"><span>916</span></div>
+          <h2 class="finalcard__title" id="ctaHeading">Now price the real thing.</h2>
+          <p class="finalcard__body">
+            Take the rate off the board, type it in, and see exactly which rupees you can push on.
+            Free, offline, and it tells no one what you're buying.
+          </p>
+          <a class="btn btn--primary btn--lg" href="https://sreenivas-sadhu-prabhakara.github.io/goldmath/">Open the goldmath calculator &rarr;</a>
+          <p class="finalcard__url">sreenivas-sadhu-prabhakara.github.io/goldmath</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="foot">
+    <div class="foot__inner">
+      <p class="foot__disclaimer">
+        <strong>An explainer and negotiation reference, not financial, investment, or tax advice.</strong>
+        The worked figures on this page are illustrative. Billing conventions vary by shop, region and
+        state; GST rates change &mdash; verify the numbers printed on your actual invoice. Hallmarked
+        fineness is a certified <em>minimum</em>, so metal value is a slightly conservative estimate, and
+        buy-back offers are shop policy, not law. Provided under the MIT License, &ldquo;as is&rdquo;, without
+        warranty; the author accepts no liability for any loss arising from its use.
+      </p>
+      <p class="foot__meta">
+        <a href="https://sreenivas-sadhu-prabhakara.github.io/goldmath/">The goldmath calculator</a>
+        <span class="foot__dot">&middot;</span>
+        <span>Works 100% offline</span><span class="foot__dot">&middot;</span>
+        <span>No network, no accounts, no tracking</span><span class="foot__dot">&middot;</span>
+        <span>MIT&nbsp;License</span><span class="foot__dot">&middot;</span>
+        <span>&copy; 2026 Sreenivas&nbsp;Sadhu&nbsp;Prabhakara</span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

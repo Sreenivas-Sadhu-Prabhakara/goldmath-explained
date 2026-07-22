@@ -1,0 +1,24 @@
+{
+  "name": "goldmath — explained",
+  "short_name": "goldmath explained",
+  "description": "An animated, offline explainer of how a gold jewellery price is built — metal value, wastage, making charges and GST — and which rupees are fixed and which are negotiable.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#241711",
+  "theme_color": "#241711",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
